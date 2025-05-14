@@ -15,7 +15,7 @@
 
     <script>
       $(document).ready(function () {
-        fetch('test.js')
+        fetch('test.json')
           .then(response => response.json())
           .then(config => {
             $('#my-map').imageMapPro(config);

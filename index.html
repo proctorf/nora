@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Ace Morgan Map</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    #image-map-pro {
-      width: 100%;
-      height: 100vh;
-    }
-  </style>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Theatre Arts Building Blueprint</title>
 
-  <div id="image-map-pro"></div>
+    <!-- jQuery + ImageMapPro JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="image-map-pro.min.js"></script>
+  </head>
+  <body>
+    <h1>Theatre Arts Building Blueprints</h1>
+    <div id="my-map" style="width: 100%; height: 600px;"></div>
 
-  <!-- Load the ImageMapPro script -->
-  <script src="image-map-pro.min.js"></script>
-
-  <!-- Load your map config -->
-  <script src="test.js"></script>
-
-</body>
+    <script>
+      $(document).ready(function () {
+        fetch('test.js')
+          .then(response => response.json())
+          .then(config => {
+            $('#my-map').imageMapPro(config);
+          });
+      });
+    </script>
+  </body>
 </html>
